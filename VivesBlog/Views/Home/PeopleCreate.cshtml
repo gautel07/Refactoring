@@ -1,0 +1,11 @@
+﻿@model Person
+
+@{
+	ViewData["Title"] = "Create Person";
+}
+
+<form method="post">
+	<partial name="PeopleCreateEditPartial" model="Model"/>
+
+	<button class="btn btn-primary" type="submit">Create</button>
+</form>

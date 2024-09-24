@@ -1,0 +1,17 @@
+﻿@model IList<Article>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section>
+	<header>
+		<h1>Vives Blog</h1>
+	</header>
+
+	@foreach (var article in Model)
+	{
+		<partial name="ArticlePartial" model="article"/>
+	}
+
+</section>

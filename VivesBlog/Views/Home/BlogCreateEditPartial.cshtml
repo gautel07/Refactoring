@@ -1,0 +1,35 @@
+﻿@model ArticleModel
+
+@{
+	var authors = Model.Authors.Select(a => 
+		new
+		{
+			Id = a.Id, 
+			Name = $"{a.Name1} {a.Name2}"
+		});
+
+	var authorList = new SelectList(authors, "Id", "Name", Model.Article.AuthorId);
+}
+
+<div asp-validation-summary="ModelOnly"></div>
+
+<div class="form-group">
+	<label asp-for="Article.Title"></label>
+	<input asp-for="Article.Title" class="form-control" />
+	<span asp-validation-for="Article.Title"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Article.Description"></label>
+	<textarea asp-for="Article.Description" class="form-control" ></textarea>
+	<span asp-validation-for="Article.Description"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Article.Content"></label>
+	<textarea asp-for="Article.Content" class="form-control"></textarea>
+	<span asp-validation-for="Article.Content"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Article.AuthorId"></label>
+	<select asp-for="Article.AuthorId" asp-items="authorList"></select>
+	<span asp-validation-for="Article.AuthorId"></span>
+</div>

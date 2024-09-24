@@ -1,0 +1,27 @@
+﻿@model IList<Article>
+
+@{
+	ViewData["Title"] = "Blog Management";
+}
+
+
+<h1>Manage Blog Posts</h1>
+
+<a class="btn btn-primary" asp-action="BlogCreate">New Blog Post</a>
+
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Created</th>
+		<th>Actions</th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var article in Model)
+	{
+		<partial name="BlogRowPartial" model="article"/>
+	}
+	</tbody>
+</table>

@@ -1,0 +1,19 @@
+﻿@model Article
+
+<article class="card">
+	<header class="card-header">
+		<h2 class="card-title">@Model.Title</h2>
+	</header>
+	<p class="card-body">
+		@Model.Description
+	</p>
+	<footer class="card-footer">
+		<a class="btn btn-primary" asp-area="" 
+		   asp-controller="Home" 
+		   asp-action="Details" 
+		   asp-route-id="@Model.Key">
+			Read more...
+		</a>
+		Written by @Model.Author.Name1 @Model.Author.Name2 on @Model.CreatedDate.ToString("dddd dd MMMM yyyy HH:mm")
+	</footer>
+</article>

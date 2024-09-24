@@ -1,0 +1,13 @@
+﻿@model Article
+
+@{
+	ViewData["Title"] = "Delete Article";
+}
+
+<h1>Delete Article</h1>
+
+<form method="post">
+	<p>Are you sure you want to delete "@Model.Title" from @Model.Author.Name1 @Model.Author.Name2?</p>
+	<a class="btn btn-light" asp-action="Index">No</a>
+	<button class="btn btn-danger" type="submit">Yes</button>
+</form>

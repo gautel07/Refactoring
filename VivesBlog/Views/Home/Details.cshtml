@@ -1,0 +1,29 @@
+﻿@model Article
+
+@{
+	ViewData["Title"] = "Article Detail";
+}
+
+@if (Model is not null)
+{
+	<article class="card">
+		<header class="card-header">
+			<h2 class="card-title">@Model.Title</h2>
+		</header>
+		<div class="card-body">
+			<p>@Model.Description</p>
+			<p>@Model.Content</p>
+		</div>
+		<footer class="card-footer">
+			Written by @Model.Author.Name1 @Model.Author.Name2 on @Model.CreatedDate.ToString("dddd dd MMMM yyyy HH:mm")
+		</footer>
+	</article>
+}
+else
+{
+	<p>This article does not exist.</p>
+}
+
+<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Index">
+	&lt; Back
+</a>

@@ -1,0 +1,13 @@
+﻿@model ArticleModel
+
+@{
+	ViewData["Title"] = "Edit Article";
+}
+
+<form method="post">
+	<input type="hidden" asp-for="Article.Key"/>
+
+	<partial name="BlogCreateEditPartial" model="Model"/>
+
+	<button class="btn btn-primary" type="submit">Save</button>
+</form>
